@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="str_Buttons_Arm">Arm</string>
+    <string name="str_Buttons_Disarm">Disarm</string>
+    <string name="str_Buttons_Alarm">Alarm</string>
+    <string name="str_Buttons_USSD">USSD</string>
+    <string name="str_Buttons_Valet">Valet</string>
+    <string name="str_Buttons_State">State</string>
+    <string name="str_Buttons_GPS">GPS</string>
+    <string name="str_Buttons_Channel1">Channel1</string>
+    <string name="str_Buttons_Channel2">Channel2</string>
+    <string name="str_Buttons_DisableSensors">Disable sensors</string>
+    <string name="str_Buttons_EnableSensors">Enable sensors</string>
+    <string name="str_Buttons_EnableMonitoring">Enable monitoring</string>
+    <string name="str_Buttons_DisableMonitoring">Disable monitoring</string>
+    <string name="str_Buttons_DisableSiren">Disable siren</string>
+    <string name="str_Buttons_EnableSiren">Enable siren</string>
+    <string name="str_Buttons_DisableMicrophone">Disable microphone</string>
+    <string name="str_Buttons_EnableMicrophone">Enable microphone</string>
+    <string name="str_Buttons_StartEngine">Start engine</string>
+    <string name="str_Buttons_StopEngine">Stop engine</string>
+    <string name="str_Buttons_StartListen">Start listen</string>
+</resources>

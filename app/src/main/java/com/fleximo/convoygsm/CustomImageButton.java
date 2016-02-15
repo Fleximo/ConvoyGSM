@@ -14,6 +14,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.BitmapDrawable;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.view.Gravity;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -23,7 +24,7 @@ import android.widget.TextView;
 /**
  * Created by fleximo on 05.01.16.
  */
-public class CustomImageButton extends ImageButton {
+public class CustomImageButton extends LinearLayout {
 
     public enum ButtonType {
         BUTTON_TYPE_ARM,
@@ -49,8 +50,9 @@ public class CustomImageButton extends ImageButton {
     }
 
 
-    //ImageButton imageButton;
-    //TextView textView;
+    ImageButton imageButton;
+    TextView textView;
+
     public ButtonType getButtonType() {
         return m_button_type;
     }
@@ -58,13 +60,16 @@ public class CustomImageButton extends ImageButton {
     public CustomImageButton(Context context, ButtonType button_type) {
         super(context);
 
-//        setOrientation(VERTICAL);
-//        imageButton = new ImageButton(mContext);
-//        textView = new TextView(mContext);
-//        addView(imageButton);
-//        addView(textView);
-
         mContext = context;
+
+        setOrientation(VERTICAL);
+        imageButton = new ImageButton(mContext);
+        textView = new TextView(mContext);
+        textView.setGravity(Gravity.CENTER);
+        addView(imageButton);
+        addView(textView);
+
+
         m_button_type = button_type;
         initilizeImage();
 
@@ -96,47 +101,85 @@ public class CustomImageButton extends ImageButton {
 //        mBitmap = Bitmap.createScaledBitmap(bitmap, imageWidth, imageHeight, false);
 
         if(m_button_type == ButtonType.BUTTON_TYPE_ARM) {
-            setImageResource(R.drawable.ic_button_arm);
-            //textView.setText("Bla-Bla");
+            imageButton.setImageResource(R.drawable.ic_button_arm);
+            textView.setText(mContext.getString(R.string.str_Buttons_Arm));
         }
-        else if(m_button_type == ButtonType.BUTTON_TYPE_DISARM)
-            setImageResource(R.drawable.ic_button_disarm);
-        else if(m_button_type == ButtonType.BUTTON_TYPE_ALARM)
-            setImageResource(R.drawable.ic_button_panic);
-        else if(m_button_type == ButtonType.BUTTON_TYPE_USSD)
-            setImageResource(R.drawable.ic_button_deposit);
-        else if(m_button_type == ButtonType.BUTTON_TYPE_VALET)
-            setImageResource(R.drawable.ic_button_valet);
-        else if(m_button_type == ButtonType.BUTTON_TYPE_STATE)
-            setImageResource(R.drawable.ic_button_status);
-        else if(m_button_type == ButtonType.BUTTON_TYPE_GPS)
-            setImageResource(R.drawable.ic_button_gps);
-        else if(m_button_type == ButtonType.BUTTON_TYPE_RUNCH1)
-            setImageResource(R.drawable.ic_button_channel1);
-        else if(m_button_type == ButtonType.BUTTON_TYPE_RUNCH2)
-            setImageResource(R.drawable.ic_button_channel2);
-        else if(m_button_type == ButtonType.BUTTON_TYPE_DISABLE_SENSORS)
-            setImageResource(R.drawable.ic_button_sensor_disabled);
-        else if(m_button_type == ButtonType.BUTTON_TYPE_ENABLE_SENSORS)
-            setImageResource(R.drawable.ic_button_sensor_enabled);
-        else if(m_button_type == ButtonType.BUTTON_TYPE_ENABLE_MONITORING)
-            setImageResource(R.drawable.ic_button_tracking_enabled);
-        else if(m_button_type == ButtonType.BUTTON_TYPE_DISABLE_MONITORING)
-            setImageResource(R.drawable.ic_button_tracking_disabled);
-        else if(m_button_type == ButtonType.BUTTON_TYPE_DISABLE_SIREN)
-            setImageResource(R.drawable.ic_button_siren_off);
-        else if(m_button_type == ButtonType.BUTTON_TYPE_ENABLE_SIREN)
-            setImageResource(R.drawable.ic_button_siren_on);
-        else if(m_button_type == ButtonType.BUTTON_TYPE_DISABLE_MICROPHONE)
-            setImageResource(R.drawable.ic_button_speaker_off);
-        else if(m_button_type == ButtonType.BUTTON_TYPE_ENABLE_MICROPHONE)
-            setImageResource(R.drawable.ic_button_speaker_on);
-        else if(m_button_type == ButtonType.BUTTON_TYPE_START_ENGINE)
-            setImageResource(R.drawable.ic_button_start_engine);
-        else if(m_button_type == ButtonType.BUTTON_TYPE_STOP_ENGINE)
-            setImageResource(R.drawable.ic_button_stop_engine);
-        else if(m_button_type == ButtonType.BUTTON_TYPE_START_LISTEN)
-            setImageResource(R.drawable.ic_button_listening_mode);
+        else if(m_button_type == ButtonType.BUTTON_TYPE_DISARM) {
+            imageButton.setImageResource(R.drawable.ic_button_disarm);
+            textView.setText(mContext.getString(R.string.str_Buttons_Disarm));
+        }
+        else if(m_button_type == ButtonType.BUTTON_TYPE_ALARM) {
+            imageButton.setImageResource(R.drawable.ic_button_panic);
+            textView.setText(mContext.getString(R.string.str_Buttons_Alarm));
+        }
+        else if(m_button_type == ButtonType.BUTTON_TYPE_USSD) {
+            imageButton.setImageResource(R.drawable.ic_button_deposit);
+            textView.setText(mContext.getString(R.string.str_Buttons_USSD));
+        }
+        else if(m_button_type == ButtonType.BUTTON_TYPE_VALET) {
+            imageButton.setImageResource(R.drawable.ic_button_valet);
+            textView.setText(mContext.getString(R.string.str_Buttons_Valet));
+        }
+        else if(m_button_type == ButtonType.BUTTON_TYPE_STATE) {
+            imageButton.setImageResource(R.drawable.ic_button_status);
+            textView.setText(mContext.getString(R.string.str_Buttons_State));
+        }
+        else if(m_button_type == ButtonType.BUTTON_TYPE_GPS) {
+            imageButton.setImageResource(R.drawable.ic_button_gps);
+            textView.setText(mContext.getString(R.string.str_Buttons_GPS));
+        }
+        else if(m_button_type == ButtonType.BUTTON_TYPE_RUNCH1) {
+            imageButton.setImageResource(R.drawable.ic_button_channel1);
+            textView.setText(mContext.getString(R.string.str_Buttons_Channel1));
+        }
+        else if(m_button_type == ButtonType.BUTTON_TYPE_RUNCH2) {
+            imageButton.setImageResource(R.drawable.ic_button_channel2);
+            textView.setText(mContext.getString(R.string.str_Buttons_Channel2));
+        }
+        else if(m_button_type == ButtonType.BUTTON_TYPE_DISABLE_SENSORS) {
+            imageButton.setImageResource(R.drawable.ic_button_sensor_disabled);
+            textView.setText(mContext.getString(R.string.str_Buttons_DisableSensors));
+        }
+        else if(m_button_type == ButtonType.BUTTON_TYPE_ENABLE_SENSORS) {
+            imageButton.setImageResource(R.drawable.ic_button_sensor_enabled);
+            textView.setText(mContext.getString(R.string.str_Buttons_EnableSensors));
+        }
+        else if(m_button_type == ButtonType.BUTTON_TYPE_ENABLE_MONITORING) {
+            imageButton.setImageResource(R.drawable.ic_button_tracking_enabled);
+            textView.setText(mContext.getString(R.string.str_Buttons_EnableMonitoring));
+        }
+        else if(m_button_type == ButtonType.BUTTON_TYPE_DISABLE_MONITORING) {
+            imageButton.setImageResource(R.drawable.ic_button_tracking_disabled);
+            textView.setText(mContext.getString(R.string.str_Buttons_DisableMonitoring));
+        }
+        else if(m_button_type == ButtonType.BUTTON_TYPE_DISABLE_SIREN) {
+            imageButton.setImageResource(R.drawable.ic_button_siren_off);
+            textView.setText(mContext.getString(R.string.str_Buttons_DisableSiren));
+        }
+        else if(m_button_type == ButtonType.BUTTON_TYPE_ENABLE_SIREN) {
+            imageButton.setImageResource(R.drawable.ic_button_siren_on);
+            textView.setText(mContext.getString(R.string.str_Buttons_EnableSiren));
+        }
+        else if(m_button_type == ButtonType.BUTTON_TYPE_DISABLE_MICROPHONE) {
+            imageButton.setImageResource(R.drawable.ic_button_speaker_off);
+            textView.setText(mContext.getString(R.string.str_Buttons_DisableMicrophone));
+        }
+        else if(m_button_type == ButtonType.BUTTON_TYPE_ENABLE_MICROPHONE) {
+            imageButton.setImageResource(R.drawable.ic_button_speaker_on);
+            textView.setText(mContext.getString(R.string.str_Buttons_EnableMicrophone));
+        }
+        else if(m_button_type == ButtonType.BUTTON_TYPE_START_ENGINE) {
+            imageButton.setImageResource(R.drawable.ic_button_start_engine);
+            textView.setText(mContext.getString(R.string.str_Buttons_StartEngine));
+        }
+        else if(m_button_type == ButtonType.BUTTON_TYPE_STOP_ENGINE) {
+            imageButton.setImageResource(R.drawable.ic_button_stop_engine);
+            textView.setText(mContext.getString(R.string.str_Buttons_StopEngine));
+        }
+        else if(m_button_type == ButtonType.BUTTON_TYPE_START_LISTEN) {
+            imageButton.setImageResource(R.drawable.ic_button_listening_mode);
+            textView.setText(mContext.getString(R.string.str_Buttons_StartListen));
+        }
     }
 
     private float getScreenGridUnit() {

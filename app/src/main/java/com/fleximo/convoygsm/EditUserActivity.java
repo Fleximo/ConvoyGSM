@@ -112,7 +112,7 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
         m_arm = m_user.getArm();
         settingsItemArm.setActive(m_arm);
         settingsItemArm.setSettingId(SettingsItem.SettingId.SETTING_ID_ARM);
-        settingsItemArm.setSettingName("Arm");
+        settingsItemArm.setSettingName(getString(R.string.str_Buttons_Arm));
         ll_EditUser_Body.addView(settingsItemArm);
         //Disarm
         SettingsItem settingsItemDisarm = new SettingsItem(this, null);
@@ -120,7 +120,7 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
         m_disarm = m_user.getDisarm();
         settingsItemDisarm.setActive(m_disarm);
         settingsItemDisarm.setSettingId(SettingsItem.SettingId.SETTING_ID_DISARM);
-        settingsItemDisarm.setSettingName("Disarm");
+        settingsItemDisarm.setSettingName(getString(R.string.str_Buttons_Disarm));
         ll_EditUser_Body.addView(settingsItemDisarm);
         //Alarm
         SettingsItem settingsItemAlarm = new SettingsItem(this, null);
@@ -128,7 +128,7 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
         m_alarm = m_user.getAlarm();
         settingsItemAlarm.setActive(m_alarm);
         settingsItemAlarm.setSettingId(SettingsItem.SettingId.SETTING_ID_ALARM);
-        settingsItemAlarm.setSettingName("Alarm");
+        settingsItemAlarm.setSettingName(getString(R.string.str_Buttons_Alarm));
         ll_EditUser_Body.addView(settingsItemAlarm);
         //USSD
         SettingsItem settingsItemUSSD = new SettingsItem(this, null);
@@ -136,7 +136,7 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
         m_ussd = m_user.getUssd();
         settingsItemUSSD.setActive(m_ussd);
         settingsItemUSSD.setSettingId(SettingsItem.SettingId.SETTING_ID_USSD);
-        settingsItemUSSD.setSettingName("USSD");
+        settingsItemUSSD.setSettingName(getString(R.string.str_Buttons_USSD));
         ll_EditUser_Body.addView(settingsItemUSSD);
         //Valet
         SettingsItem settingsItemValet = new SettingsItem(this, null);
@@ -144,7 +144,7 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
         m_valet = m_user.getValet();
         settingsItemValet.setActive(m_valet);
         settingsItemValet.setSettingId(SettingsItem.SettingId.SETTING_ID_VALET);
-        settingsItemValet.setSettingName("Valet");
+        settingsItemValet.setSettingName(getString(R.string.str_Buttons_Valet));
         ll_EditUser_Body.addView(settingsItemValet);
         //State
         SettingsItem settingsItemState = new SettingsItem(this, null);
@@ -152,7 +152,7 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
         m_state = m_user.getState();
         settingsItemState.setActive(m_state);
         settingsItemState.setSettingId(SettingsItem.SettingId.SETTING_ID_STATE);
-        settingsItemState.setSettingName("State");
+        settingsItemState.setSettingName(getString(R.string.str_Buttons_State));
         ll_EditUser_Body.addView(settingsItemState);
         //GPS
         SettingsItem settingsItemGPS = new SettingsItem(this, null);
@@ -160,7 +160,7 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
         m_gps = m_user.getGps();
         settingsItemGPS.setActive(m_gps);
         settingsItemGPS.setSettingId(SettingsItem.SettingId.SETTING_ID_GPS);
-        settingsItemGPS.setSettingName("GPS");
+        settingsItemGPS.setSettingName(getString(R.string.str_Buttons_GPS));
         ll_EditUser_Body.addView(settingsItemGPS);
         //Runch1
         SettingsItem settingsItemRunch1 = new SettingsItem(this, null);
@@ -168,7 +168,7 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
         m_runch1 = m_user.getRunch1();
         settingsItemRunch1.setActive(m_runch1);
         settingsItemRunch1.setSettingId(SettingsItem.SettingId.SETTING_ID_RUNCH1);
-        settingsItemRunch1.setSettingName("Runch1");
+        settingsItemRunch1.setSettingName(getString(R.string.str_Buttons_Channel1));
         ll_EditUser_Body.addView(settingsItemRunch1);
         //Runch2
         SettingsItem settingsItemRunch2 = new SettingsItem(this, null);
@@ -176,7 +176,7 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
         m_runch2 = m_user.getRunch2();
         settingsItemRunch2.setActive(m_runch2);
         settingsItemRunch2.setSettingId(SettingsItem.SettingId.SETTING_ID_RUNCH2);
-        settingsItemRunch2.setSettingName("Runch2");
+        settingsItemRunch2.setSettingName(getString(R.string.str_Buttons_Channel2));
         ll_EditUser_Body.addView(settingsItemRunch2);
         //Disable sensors
         SettingsItem settingsItemDisableSensors = new SettingsItem(this, null);
@@ -184,7 +184,7 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
         m_disableSensors = m_user.getDisableSensors();
         settingsItemDisableSensors.setActive(m_disableSensors);
         settingsItemDisableSensors.setSettingId(SettingsItem.SettingId.SETTING_ID_DISABLE_SENSORS);
-        settingsItemDisableSensors.setSettingName("Disable sensors");
+        settingsItemDisableSensors.setSettingName(getString(R.string.str_Buttons_DisableSensors));
         ll_EditUser_Body.addView(settingsItemDisableSensors);
         //Enable sensors
         SettingsItem settingsItemEnableSensors = new SettingsItem(this, null);
@@ -192,7 +192,7 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
         m_enableSensors = m_user.getEnableSensors();
         settingsItemEnableSensors.setActive(m_enableSensors);
         settingsItemEnableSensors.setSettingId(SettingsItem.SettingId.SETTING_ID_ENABLE_SENSORS);
-        settingsItemEnableSensors.setSettingName("Enable sensors");
+        settingsItemEnableSensors.setSettingName(getString(R.string.str_Buttons_EnableSensors));
         ll_EditUser_Body.addView(settingsItemEnableSensors);
         //Enable monitoring
         SettingsItem settingsItemEnableMonitoring = new SettingsItem(this, null);
@@ -200,7 +200,7 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
         m_enableMonitoring = m_user.getEnableMonitoring();
         settingsItemEnableMonitoring.setActive(m_enableMonitoring);
         settingsItemEnableMonitoring.setSettingId(SettingsItem.SettingId.SETTING_ID_ENABLE_MONITORING);
-        settingsItemEnableMonitoring.setSettingName("Enable monitoring");
+        settingsItemEnableMonitoring.setSettingName(getString(R.string.str_Buttons_EnableMonitoring));
         ll_EditUser_Body.addView(settingsItemEnableMonitoring);
         //Disable monitoring
         SettingsItem settingsItemDisableMonitoring = new SettingsItem(this, null);
@@ -208,7 +208,7 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
         m_disableMonitoring = m_user.getDisableMonitoring();
         settingsItemDisableMonitoring.setActive(m_disableMonitoring);
         settingsItemDisableMonitoring.setSettingId(SettingsItem.SettingId.SETTING_ID_DISABLE_MONITORING);
-        settingsItemDisableMonitoring.setSettingName("Disable monitoring");
+        settingsItemDisableMonitoring.setSettingName(getString(R.string.str_Buttons_DisableMonitoring));
         ll_EditUser_Body.addView(settingsItemDisableMonitoring);
         //Disable siren
         SettingsItem settingsItemDisableSiren = new SettingsItem(this, null);
@@ -216,7 +216,7 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
         m_disableSiren = m_user.getDisableSiren();
         settingsItemDisableSiren.setActive(m_disableSiren);
         settingsItemDisableSiren.setSettingId(SettingsItem.SettingId.SETTING_ID_DISABLE_SIREN);
-        settingsItemDisableSiren.setSettingName("Disable siren");
+        settingsItemDisableSiren.setSettingName(getString(R.string.str_Buttons_DisableSiren));
         ll_EditUser_Body.addView(settingsItemDisableSiren);
         //Enable siren
         SettingsItem settingsItemEnableSiren = new SettingsItem(this, null);
@@ -224,7 +224,7 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
         m_enableSiren = m_user.getEnableSiren();
         settingsItemEnableSiren.setActive(m_enableSiren);
         settingsItemEnableSiren.setSettingId(SettingsItem.SettingId.SETTING_ID_ENABLE_SIREN);
-        settingsItemEnableSiren.setSettingName("Enable siren");
+        settingsItemEnableSiren.setSettingName(getString(R.string.str_Buttons_EnableSiren));
         ll_EditUser_Body.addView(settingsItemEnableSiren);
         //Disable microphone
         SettingsItem settingsItemDisableMicrophone = new SettingsItem(this, null);
@@ -232,7 +232,7 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
         m_disableMicrophone = m_user.getDisableMicrophone();
         settingsItemDisableMicrophone.setActive(m_disableMicrophone);
         settingsItemDisableMicrophone.setSettingId(SettingsItem.SettingId.SETTING_ID_DISABLE_MICROPHONE);
-        settingsItemDisableMicrophone.setSettingName("Disable microphone");
+        settingsItemDisableMicrophone.setSettingName(getString(R.string.str_Buttons_DisableMicrophone));
         ll_EditUser_Body.addView(settingsItemDisableMicrophone);
         //Enable microphone
         SettingsItem settingsItemEnableMicrophone = new SettingsItem(this, null);
@@ -240,7 +240,7 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
         m_enableMicrophone = m_user.getEnableMicrophone();
         settingsItemEnableMicrophone.setActive(m_enableMicrophone);
         settingsItemEnableMicrophone.setSettingId(SettingsItem.SettingId.SETTING_ID_ENABLE_MICROPHONE);
-        settingsItemEnableMicrophone.setSettingName("Enable microphone");
+        settingsItemEnableMicrophone.setSettingName(getString(R.string.str_Buttons_EnableMicrophone));
         ll_EditUser_Body.addView(settingsItemEnableMicrophone);
         //Start engine
         SettingsItem settingsItemStartEngine = new SettingsItem(this, null);
@@ -248,7 +248,7 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
         m_startEngine = m_user.getStartEngine();
         settingsItemStartEngine.setActive(m_startEngine);
         settingsItemStartEngine.setSettingId(SettingsItem.SettingId.SETTING_ID_START_ENGINE);
-        settingsItemStartEngine.setSettingName("Enable microphone");
+        settingsItemStartEngine.setSettingName(getString(R.string.str_Buttons_StartEngine));
         ll_EditUser_Body.addView(settingsItemStartEngine);
         //Stop engine
         SettingsItem settingsItemStopEngine = new SettingsItem(this, null);
@@ -256,7 +256,7 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
         m_stopEngine = m_user.getStopEngine();
         settingsItemStopEngine.setActive(m_stopEngine);
         settingsItemStopEngine.setSettingId(SettingsItem.SettingId.SETTING_ID_STOP_ENGINE);
-        settingsItemStopEngine.setSettingName("Stop engine");
+        settingsItemStopEngine.setSettingName(getString(R.string.str_Buttons_StopEngine));
         ll_EditUser_Body.addView(settingsItemStopEngine);
         //Start listen
         SettingsItem settingsItemStartListen = new SettingsItem(this, null);
@@ -264,7 +264,7 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
         m_startListen = m_user.getStartListen();
         settingsItemStartListen.setActive(m_startListen);
         settingsItemStartListen.setSettingId(SettingsItem.SettingId.SETTING_ID_START_LISTEN);
-        settingsItemStartListen.setSettingName("Start listen");
+        settingsItemStartListen.setSettingName(getString(R.string.str_Buttons_StartListen));
         ll_EditUser_Body.addView(settingsItemStartListen);
     }
 
