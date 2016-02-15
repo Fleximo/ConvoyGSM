@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="str_Settings_Header">Application Settings</string>
+    <string name="str_Settings_Language">Language</string>
+    <string name="btn_Settings_Cancel">Cancel</string>
+    <string name="btn_Settings_Save">Save</string>
+</resources>

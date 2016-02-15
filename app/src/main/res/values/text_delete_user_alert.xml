@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Delete User Alert -->
+    <string name="str_DeleteUserAlert_Text">Are you sure you want to delete user?</string>
+    <!-- Save User Alert -->
+    <string name="str_SaveUserAlert_Text">Are you sure you want to save user settings?</string>
+    <!-- Common User Alert -->
+    <string name="str_DeleteUserAlert_OK">OK</string>
+    <string name="str_DeleteUserAlert_Cancel">Cancel</string>
+</resources>

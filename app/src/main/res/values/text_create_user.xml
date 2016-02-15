@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="et_CreateUser_UserName">User Name</string>
+    <string name="et_CreateUser_SimCardPhone">SIM-Card Phone #</string>
+    <string name="et_CreateUser_PinCode">PIN code</string>
+    <string name="et_CreateUser_VerificationCode">*XXX#</string>
+
+    <string name="btn_CreateUser_Create">Create</string>
+    <string name="btn_CreateUser_Cancel">Cancel</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tvSimCardPhone">SIM-Card Phone #</string>
+    <string name="tvPinCode">PIN code</string>
+    <string name="tvNext">NEXT</string>
+</resources>
