@@ -15,6 +15,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -61,18 +62,24 @@ public class CustomImageButton extends LinearLayout {
         super(context);
 
         mContext = context;
-
         setOrientation(VERTICAL);
         imageButton = new ImageButton(mContext);
         textView = new TextView(mContext);
         textView.setGravity(Gravity.CENTER);
         addView(imageButton);
         addView(textView);
-
-
         m_button_type = button_type;
         initilizeImage();
-
+        //Create listener for transfering click event to the father
+        View.OnClickListener listener =  new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LinearLayout linearLayout = (LinearLayout)v.getParent();
+                linearLayout.performClick();
+            }
+        };
+        textView.setOnClickListener(listener);
+        imageButton.setOnClickListener(listener);
     }
 
     public CustomImageButton(Context context, AttributeSet attrs) {

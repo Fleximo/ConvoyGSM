@@ -276,7 +276,7 @@ public class PageFragmentBody extends Fragment {
         List<User> users =  m_db_helper.getAllUsers();
         User user = users.get(m_user_id_number_in_db - 1);
 
-        String text = "PIN ";
+        String text = "PIN:";
         text += user.getPIN();
         text += " ";
         ButtonType buttonType = m_pressed_image_button.getButtonType();
@@ -351,8 +351,7 @@ public class PageFragmentBody extends Fragment {
         switch (requestCode) {
             case MY_PERMISSIONS_REQUEST_SEND_SMS: {
                 // If request is cancelled, the result arrays are empty.
-                if (grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     sendSMS();
                 } else {
                     // permission denied, boo! Disable the
@@ -374,15 +373,6 @@ public class PageFragmentBody extends Fragment {
             String phone = user.getPhoneSIMCard();
             String message = getMessageText();
             smsManager.sendTextMessage(phone, null, message, null, null);
-
-            //if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
-                SubscriptionManager subscriptionManager = SubscriptionManager.from(getContext());
-                List<SubscriptionInfo> subscriptionInfoList = subscriptionManager.getActiveSubscriptionInfoList();
-                for (SubscriptionInfo subscriptionInfo : subscriptionInfoList) {
-                    int subscriptionId = subscriptionInfo.getSubscriptionId();
-                    Log.d("apipas", "subscriptionId:" + subscriptionId);
-                }
-            //}
 
             Toast.makeText(getContext(), "SMS Sent!", Toast.LENGTH_LONG).show();
         } catch (Exception e) {
