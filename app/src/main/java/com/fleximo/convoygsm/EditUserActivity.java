@@ -9,13 +9,9 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -272,66 +268,21 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
 
         if(v.getId() == R.id.btn_EditUser_Save) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage(R.string.str_SaveUserAlert_Text)
-                    .setPositiveButton(R.string.str_DeleteUserAlert_OK, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            save();
-                            finish();
-                        }
-                    })
-                    .setNegativeButton(R.string.str_DeleteUserAlert_Cancel, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            //Current behavior - nothing to do.
-                        }
-                    });
-            // Create the AlertDialog object and show it
-            builder.create().show();
+            Save();
         }
 
         if(v.getId() == R.id.btn_EditUser_Delete) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage(R.string.str_DeleteUserAlert_Text)
-                    .setPositiveButton(R.string.str_DeleteUserAlert_OK, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            dbAdapter.deleteUser(m_user);
-                            finish();
-                        }
-                    })
-                    .setNegativeButton(R.string.str_DeleteUserAlert_Cancel, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            //Current behavior - nothing to do.
-                        }
-                    });
-            // Create the AlertDialog object and show it
-            builder.create().show();
+            Delete();
         }
 
 
         if(v.getId() == R.id.imgbtn_EditUser_Phone) {
-            if (ContextCompat.checkSelfPermission(EditUserActivity.this, Manifest.permission.READ_CONTACTS) == PackageManager.PERMISSION_GRANTED) {
-                Intent pickContactIntent = new Intent(Intent.ACTION_PICK, Uri.parse("content://contacts"));
-                pickContactIntent.setType(ContactsContract.CommonDataKinds.Phone.CONTENT_TYPE); // Show user only contacts w/ phone numbers
-                startActivityForResult(pickContactIntent, PICK_CONTACT_REQUEST);
-            } else { // Permission NOT GRANTED
-
-                // Should we show an explanation?
-                if (ActivityCompat.shouldShowRequestPermissionRationale(EditUserActivity.this, Manifest.permission.READ_CONTACTS)) {
-                    // Show an expanation to the user *asynchronously* -- don't block
-                    // this thread waiting for the user's response! After the user
-                    // sees the explanation, try again to request the permission.
-                } else {
-                    // No explanation needed, we can request the permission.
-                    ActivityCompat.requestPermissions(EditUserActivity.this,
-                            new String[]{Manifest.permission.READ_CONTACTS},
-                            PICK_CONTACT_REQUEST);
-                }
-            }
+            GetPhoneNumbFromContactList();
         }
 
         if(v.getId() == R.id.imgbtn_EditUser_PinCode) {
-            et_EditUser_PinCode.setText("0000");
-            Toast.makeText(EditUserActivity.this, "Default PIN: 0000 was set", Toast.LENGTH_LONG).show();
+//            et_EditUser_PinCode.setText("0000");
+//            Toast.makeText(EditUserActivity.this, "Default PIN: 0000 was set", Toast.LENGTH_LONG).show();
         }
 
 
@@ -432,6 +383,67 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
         }
     }
 
+    private void Save() {
+
+        if(!isAllFieldsCorrect())
+            return;
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(R.string.str_SaveUserAlert_Text)
+                .setPositiveButton(R.string.str_DeleteUserAlert_OK, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        save();
+                        finish();
+                    }
+                })
+                .setNegativeButton(R.string.str_DeleteUserAlert_Cancel, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        //Current behavior - nothing to do.
+                    }
+                });
+        // Create the AlertDialog object and show it
+        builder.create().show();
+    }
+
+    private void Delete() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(R.string.str_DeleteUserAlert_Text)
+                .setPositiveButton(R.string.str_DeleteUserAlert_OK, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dbAdapter.deleteUser(m_user);
+                        finish();
+                    }
+                })
+                .setNegativeButton(R.string.str_DeleteUserAlert_Cancel, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        //Current behavior - nothing to do.
+                    }
+                });
+        // Create the AlertDialog object and show it
+        builder.create().show();
+    }
+
+    private void GetPhoneNumbFromContactList() {
+        if (ContextCompat.checkSelfPermission(EditUserActivity.this, Manifest.permission.READ_CONTACTS) == PackageManager.PERMISSION_GRANTED) {
+            Intent pickContactIntent = new Intent(Intent.ACTION_PICK, Uri.parse("content://contacts"));
+            pickContactIntent.setType(ContactsContract.CommonDataKinds.Phone.CONTENT_TYPE); // Show user only contacts w/ phone numbers
+            startActivityForResult(pickContactIntent, PICK_CONTACT_REQUEST);
+        } else { // Permission NOT GRANTED
+
+            // Should we show an explanation?
+            if (ActivityCompat.shouldShowRequestPermissionRationale(EditUserActivity.this, Manifest.permission.READ_CONTACTS)) {
+                // Show an expanation to the user *asynchronously* -- don't block
+                // this thread waiting for the user's response! After the user
+                // sees the explanation, try again to request the permission.
+            } else {
+                // No explanation needed, we can request the permission.
+                ActivityCompat.requestPermissions(EditUserActivity.this,
+                        new String[]{Manifest.permission.READ_CONTACTS},
+                        PICK_CONTACT_REQUEST);
+            }
+        }
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -506,6 +518,42 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
         String subcode = code.substring(1, 4);
 
         return isInteger(subcode);
+    }
+
+    private boolean isAllFieldsCorrect() {
+        if (isUserNameCorrect() &&
+            isSIMNumberCorrect() &&
+                isPINCorrect())
+            return true;
+        else
+            return false;
+    }
+
+    private boolean isUserNameCorrect() {
+        if(!et_EditUser_UserName.getText().toString().isEmpty())
+            return true;
+        else {
+            Toast.makeText(this, getResources().getString(R.string.str_CreateUser_ErrUserName), Toast.LENGTH_LONG).show();
+            return false;
+        }
+    }
+
+    private boolean isSIMNumberCorrect() {
+        String phoneNumber = et_EditUser_SimCardPhone.getText().toString();
+        if( (phoneNumber.length() != 13) || !phoneNumber.substring(0, 4).equals("+380")) {
+            Toast.makeText(this, getResources().getString(R.string.str_CreateUser_ErrSIMNumb), Toast.LENGTH_LONG).show();
+            return false;
+        }
+        return true;
+    }
+
+    private boolean isPINCorrect() {
+        if(et_EditUser_PinCode.getText().toString().length() == 4)
+            return true;
+        else {
+            Toast.makeText(this, getResources().getString(R.string.str_CreateUser_ErrPIN), Toast.LENGTH_LONG).show();
+            return false;
+        }
     }
 
     public static boolean isInteger(String str) {

@@ -2,9 +2,13 @@ package com.fleximo.convoygsm;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Contacts;
@@ -34,13 +38,39 @@ public class CreateFirstUser extends AppCompatActivity {
     ImageButton imgbtn_CreateFirstUser_Phone;
     ImageButton imgbtn_CreateFirstUser_PinCode;
 
+    public class MyView extends View
+    {
+        public MyView(Context context)
+        {
+            super(context);
+        }
+
+        @Override
+        protected void onDraw(Canvas canvas)
+        {
+            super.onDraw(canvas);
+            int x = getWidth();
+            int y = getHeight();
+            int radius;
+            radius = x/2;
+            Paint paint = new Paint();
+            paint.setStyle(Paint.Style.FILL);
+            paint.setColor(Color.WHITE);
+            canvas.drawPaint(paint);
+            // Use Color.parseColor to define HTML colors
+            paint.setColor(Color.parseColor("#CD5C5C"));
+            canvas.drawCircle(x / 2, y / 2, radius, paint);
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_first_user);
+//        setContentView(R.layout.activity_create_first_user);
+        setContentView(new MyView(this));
 
-        init();
-        setListeners();
+//        init();
+//        setListeners();
     }
 
     @Override

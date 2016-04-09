@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="et_CreateUser_UserName">Имя объекта охраны</string>
+    <string name="et_CreateUser_SimCardPhone">№ SIM объекта охраны</string>
+    <string name="et_CreateUser_PinCode">PIN-код доступа</string>
+    <string name="et_CreateUser_VerificationCode">Код проверки баланса *XXX#</string>
+
+    <string name="btn_CreateUser_Create">Создать профиль</string>
+    <string name="btn_CreateUser_Cancel">Отмена</string>
+
+    <string name="tv_CreateUser_AddUser">Добавить профиль объекта охраны</string>
+
+    <string name="str_CreateUser_ErrUserName">Ошибка! Введите имя объекта охраны</string>
+    <string name="str_CreateUser_ErrSIMNumb">Введите № SIM в формате +380...</string>
+    <string name="str_CreateUser_ErrPIN">Ошибка! Неверный PIN-формат!</string>
+</resources>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="btn_EditUser_Save">Save\nprofile</string>
+    <string name="btn_EditUser_Delete">Delete\nprofile</string>
+</resources>

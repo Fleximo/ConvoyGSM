@@ -1,26 +1,16 @@
 package com.fleximo.convoygsm;
 
-import android.app.Activity;
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
+
 import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.Path;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.RectF;
-import android.graphics.drawable.BitmapDrawable;
-import android.util.AttributeSet;
-import android.util.DisplayMetrics;
-import android.view.Gravity;
 import android.view.View;
-import android.widget.Button;
+import android.view.Gravity;
+import android.widget.TextView;
+import android.content.Context;
+import android.util.AttributeSet;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+
 
 /**
  * Created by fleximo on 05.01.16.
@@ -50,9 +40,10 @@ public class CustomImageButton extends LinearLayout {
         BUTTON_TYPE_START_LISTEN,
     }
 
-
-    ImageButton imageButton;
-    TextView textView;
+    private Context mContext;
+    private TextView textView;
+    private ImageButton imageButton;
+    private ButtonType m_button_type;
 
     public ButtonType getButtonType() {
         return m_button_type;
@@ -64,6 +55,8 @@ public class CustomImageButton extends LinearLayout {
         mContext = context;
         setOrientation(VERTICAL);
         imageButton = new ImageButton(mContext);
+        //imageButton.setBackgroundColor(Color.parseColor("#99092435"));
+        imageButton.getBackground().setColorFilter(0x99092435, PorterDuff.Mode.MULTIPLY);
         textView = new TextView(mContext);
         textView.setGravity(Gravity.CENTER);
         addView(imageButton);
@@ -89,23 +82,6 @@ public class CustomImageButton extends LinearLayout {
     }
 
     private void initilizeImage() {
-        //Text paint
-        m_text_paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        m_text_paint.setTextSize(50);
-        m_text_paint.setStyle(Paint.Style.STROKE);
-
-        //Path
-        mClippingPath = new Path();
-
-        //Top left coordinates of image. Give appropriate values depending on the position you wnat image to be placed
-        mPivotX = getScreenGridUnit();
-        mPivotY = 0;
-
-        //Adjust the image size to support different screen sizes
-//        Bitmap bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.circle);
-//        int imageWidth = (int) (getScreenGridUnit() * 30);
-//        int imageHeight = (int) (getScreenGridUnit() * 30);
-//        mBitmap = Bitmap.createScaledBitmap(bitmap, imageWidth, imageHeight, false);
 
         if(m_button_type == ButtonType.BUTTON_TYPE_ARM) {
             imageButton.setImageResource(R.drawable.ic_button_arm);
@@ -188,18 +164,4 @@ public class CustomImageButton extends LinearLayout {
             textView.setText(mContext.getString(R.string.str_Buttons_StartListen));
         }
     }
-
-    private float getScreenGridUnit() {
-        DisplayMetrics metrics = new DisplayMetrics();
-        ((Activity)mContext).getWindowManager().getDefaultDisplay().getMetrics(metrics);
-        return metrics.widthPixels / 32;
-    }
-
-    private ButtonType m_button_type;
-    private Path mClippingPath;
-    private Paint m_text_paint;
-    private Context mContext;
-    private Bitmap mBitmap;
-    private float mPivotX;
-    private float mPivotY;
 }

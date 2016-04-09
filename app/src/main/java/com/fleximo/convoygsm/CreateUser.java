@@ -106,8 +106,8 @@ public class CreateUser extends AppCompatActivity implements View.OnClickListene
             }
 
             case R.id.imgbtn_CreateUser_PinCode: {
-                et_CreateUser_PinCode.setText("0000");
-                Toast.makeText(CreateUser.this, "Default PIN: 0000 was set", Toast.LENGTH_LONG).show();
+//                et_CreateUser_PinCode.setText("0000");
+//                Toast.makeText(CreateUser.this, "Default PIN: 0000 was set", Toast.LENGTH_LONG).show();
                 break;
             }
         }
@@ -157,6 +157,7 @@ public class CreateUser extends AppCompatActivity implements View.OnClickListene
 
     private boolean isAllFieldsCorrect() {
         if (isUserNameCorrect() &&
+            isSIMNumberCorrect() &&
             isPINCorrect())
             return true;
         else
@@ -166,29 +167,28 @@ public class CreateUser extends AppCompatActivity implements View.OnClickListene
     private boolean isUserNameCorrect() {
         if(!et_CreateUser_UserName.getText().toString().isEmpty())
             return true;
-        else
+        else {
+            Toast.makeText(this, getResources().getString(R.string.str_CreateUser_ErrUserName), Toast.LENGTH_LONG).show();
             return false;
+        }
     }
 
     private boolean isSIMNumberCorrect() {
         String phoneNumber = et_CreateUser_SimCardPhone.getText().toString();
-        if(phoneNumber.length() != 13)
-        {
+        if( (phoneNumber.length() != 13) || !phoneNumber.substring(0, 4).equals("+380")) {
+            Toast.makeText(this, getResources().getString(R.string.str_CreateUser_ErrSIMNumb), Toast.LENGTH_LONG).show();
             return false;
         }
-        else if(!phoneNumber.substring(0, 4).equals("+380"))
-        {
-            return false;
-        }
-
         return true;
     }
 
     private boolean isPINCorrect() {
         if(et_CreateUser_PinCode.getText().toString().length() == 4)
             return true;
-        else
+        else {
+            Toast.makeText(this, getResources().getString(R.string.str_CreateUser_ErrPIN), Toast.LENGTH_LONG).show();
             return false;
+        }
     }
 
     private boolean isVerificationCorrect() {

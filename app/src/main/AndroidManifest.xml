@@ -61,6 +61,21 @@
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustNothing" >
         </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".PasswordActivity"
+            android:label="@string/title_activity_password"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".Info"
+            android:label="@string/title_activity_password"
+            android:screenOrientation="portrait">
+        </activity>
     </application>
 
 </manifest>

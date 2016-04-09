@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">ConvoyGSM</string>
+    <string name="action_settings">Настройки</string>
+    <string name="title_activity_login">Регистрация</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Пароль</string>
+    <string name="prompt_passwordConfirm">Пароль (подтверждение)</string>
+    <string name="action_sign_in">Далее</string>
+    <string name="action_sign_in_short">Регистрация</string>
+    <string name="error_invalid_email">Email формат неверный</string>
+    <string name="error_invalid_password">Короткий пароль</string>
+    <string name="error_incorrect_password">Ошибка подтверждения пароля</string>
+    <string name="error_field_required">Поле должно быть заполнено</string>
+    <string name="permission_rationale">Для автозаполнения email-a нужен доступ к контактам</string>
+    <string name="title_activity_create_first_user">CreateFirstUser</string>
+    <string name="title_activity_edit_user">EditUserActivity</string>
+    <string name="title_activity_create_user">CreateUser</string>
+    <string name="title_activity_bla_bla">BlaBla</string>
+    <string name="title_activity_password">Регистрация</string>
+</resources>

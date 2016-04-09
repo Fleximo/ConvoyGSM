@@ -31,7 +31,6 @@ import static com.fleximo.convoygsm.CustomImageButton.*;
 public class PageFragmentBody extends Fragment {
 
     private final static int MY_PERMISSIONS_REQUEST_SEND_SMS = 12;
-    private final static int MY_PERMISSIONS_REQUEST_READ_PHONE_STATE = 13;
 
     private final static int BUTTON_TOP_LEFT = 0;
     private final static int BUTTON_TOP_RIGHT = 1;
@@ -43,7 +42,6 @@ public class PageFragmentBody extends Fragment {
 
     private int m_page_number;
     private int m_user_id_number_in_db;
-    private int backColor;
     private static ConvoyDBHelper m_db_helper;
     private Vector<CustomImageButton> m_buttons;
 
@@ -72,9 +70,6 @@ public class PageFragmentBody extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         m_page_number = getArguments().getInt(ARGUMENT_PAGE_NUMBER);
-
-        Random rnd = new Random();
-        backColor = Color.argb(40, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
     }
 
     @Override
@@ -291,7 +286,7 @@ public class PageFragmentBody extends Fragment {
             text += "ALARM";
         }
         else if(buttonType == ButtonType.BUTTON_TYPE_USSD) {
-            text += "USSD " + user.getVerifyCode();
+            text += "USSD \"" + user.getVerifyCode()+"\"";
         }
         else if(buttonType == ButtonType.BUTTON_TYPE_VALET) {
             text += "VALET";

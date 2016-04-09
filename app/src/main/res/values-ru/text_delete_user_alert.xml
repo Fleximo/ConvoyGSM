@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Delete User Alert -->
+    <string name="str_DeleteUserAlert_Text">Вы уверены, что хотите удалить профиль объекта охраны?</string>
+    <!-- Save User Alert -->
+    <string name="str_SaveUserAlert_Text">Вы уверены, что хотите сохранить изменения для профиля объекта охраны?</string>
+    <!-- Common User Alert -->
+    <string name="str_DeleteUserAlert_OK">OK</string>
+    <string name="str_DeleteUserAlert_Cancel">Отмена</string>
+</resources>

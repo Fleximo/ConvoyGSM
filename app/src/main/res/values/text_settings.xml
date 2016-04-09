@@ -4,4 +4,11 @@
     <string name="str_Settings_Language">Language</string>
     <string name="btn_Settings_Cancel">Cancel</string>
     <string name="btn_Settings_Save">Save</string>
+
+    <string name="str_Settings_LangUkrainian">UA</string>
+    <string name="str_Settings_LangRussian">RU</string>
+    <string name="str_Settings_LangEnglish">EN</string>
+
+    <string name="tv_Settings_ChooseLanguage">Language: </string>
+    <string name="tv_Settings_info">About application </string>
 </resources>

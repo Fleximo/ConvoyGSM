@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Delete User Alert -->
+    <string name="str_DeleteUserAlert_Text">Ви впевнені, що бажаєте видалити профіль обєкта охорони?</string>
+    <!-- Save User Alert -->
+    <string name="str_SaveUserAlert_Text">Ви впевнені, що бажаєте зберегти зміни для профіля обєкта охорони?</string>
+    <!-- Common User Alert -->
+    <string name="str_DeleteUserAlert_OK">OK</string>
+    <string name="str_DeleteUserAlert_Cancel">Відміна</string>
+</resources>

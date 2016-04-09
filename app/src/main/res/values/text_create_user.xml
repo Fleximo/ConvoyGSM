@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="et_CreateUser_UserName">User Name</string>
-    <string name="et_CreateUser_SimCardPhone">SIM-Card Phone #</string>
-    <string name="et_CreateUser_PinCode">PIN code</string>
-    <string name="et_CreateUser_VerificationCode">*XXX#</string>
+    <string name="et_CreateUser_UserName">Security object name</string>
+    <string name="et_CreateUser_SimCardPhone">Security object SIM number</string>
+    <string name="et_CreateUser_PinCode">Access PIN code</string>
+    <string name="et_CreateUser_VerificationCode">Balance checking number *XXX#</string>
 
-    <string name="btn_CreateUser_Create">Create</string>
+    <string name="btn_CreateUser_Create">Create\nprofile</string>
     <string name="btn_CreateUser_Cancel">Cancel</string>
+
+    <string name="tv_CreateUser_AddUser">Add profile of security object</string>
+
+    <string name="str_CreateUser_ErrUserName">Error! Empty user name.</string>
+    <string name="str_CreateUser_ErrSIMNumb">Enter SIM in format +380...</string>
+    <string name="str_CreateUser_ErrPIN">Error! Incorrect PIN format!</string>
 </resources>

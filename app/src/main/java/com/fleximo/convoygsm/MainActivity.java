@@ -1,13 +1,17 @@
 package com.fleximo.convoygsm;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
+import android.content.res.Configuration;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.wearable.view.DotsPageIndicator;
+import android.support.v7.widget.AppCompatRadioButton;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,16 +20,20 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
     public static final int NEWUSER_REQUEST = 1;
+    public static final String TEXT_PASSWORD = "USER_PASSWORD";
     public static int currentUserId = 0;
 
     public ConvoyDBHelper dbAdapter = new ConvoyDBHelper(this);
 
     private ImageButton imgBtnUsers;
     private ImageButton imgBtnSettings;
+
+    public static SharedPreferences m_sharedPreferences = null;
 
     private ViewPager pagerHeader;
     private ViewPager pagerBody;
@@ -47,9 +55,13 @@ public class MainActivity extends AppCompatActivity {
         updatePageAdapters();
 
         //Start Activity
-        Cursor cursor = dbAdapter.getWritableDatabase().rawQuery("SELECT  * FROM users", null);
-        if (cursor.getCount() == 0) {
-            Intent intent = new Intent(this, CreateFirstUser.class);
+        String userPassword = m_sharedPreferences.getString(TEXT_PASSWORD, "");
+        if (userPassword.equals("")) {
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivityForResult(intent, NEWUSER_REQUEST);
+        }
+        else {
+            Intent intent = new Intent(this, PasswordActivity.class);
             startActivityForResult(intent, NEWUSER_REQUEST);
         }
     }
@@ -102,6 +114,9 @@ public class MainActivity extends AppCompatActivity {
         pagerHeader = (ViewPager) findViewById(R.id.pagerHeader);
         rbGroup = (RadioGroup) findViewById(R.id.rbGroup);
 
+        m_sharedPreferences = getPreferences(MODE_PRIVATE);
+        setLanguage();
+
         m_current_page = 0;
     }
 
@@ -119,14 +134,14 @@ public class MainActivity extends AppCompatActivity {
         );
 
         imgBtnSettings.setOnClickListener
-        (   new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Settings.class);
-                startActivity(intent);
-                }
-            }
-        );
+                (new View.OnClickListener() {
+                     @Override
+                     public void onClick(View v) {
+                         Intent intent = new Intent(MainActivity.this, Settings.class);
+                         startActivity(intent);
+                     }
+                 }
+                );
 
         rbGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -145,7 +160,14 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
+    private void setLanguage() {
+        String language = m_sharedPreferences.getString(Settings.LANGUAGE, "ru");
+        Locale locale = new Locale(language);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+    }
 
     private void updatePageAdapters() {
         Cursor pageAdapterCursor = dbAdapter.getWritableDatabase().rawQuery("SELECT  * FROM users", null);
@@ -165,7 +187,19 @@ public class MainActivity extends AppCompatActivity {
                 clearRadioGroup(rbGroup);
                 final int pagesCount = pagerBodyAdapter.getCount();
                 for(int i = 0; i < pagesCount; i++) {
-                    RadioButton rb = new RadioButton(MainActivity.this);
+                    AppCompatRadioButton rb = new AppCompatRadioButton(MainActivity.this);
+                    ColorStateList colorStateList = new ColorStateList(
+                            new int[][]{
+                                    new int[]{-android.R.attr.state_checked},
+                                    new int[]{android.R.attr.state_checked}
+                            },
+                            new int[]{
+
+                                    Color.LTGRAY
+                                    , Color.WHITE,
+                            }
+                    );
+                    rb.setSupportButtonTintList(colorStateList);
                     rbGroup.addView(rb);
                     radioButtons.add(rb);
                 }

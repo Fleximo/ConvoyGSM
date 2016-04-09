@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="str_Settings_Header">Настройки приложения</string>
+    <string name="str_Settings_Language">Язык</string>
+    <string name="btn_Settings_Cancel">Отмена</string>
+    <string name="btn_Settings_Save">Сохранить</string>
+
+    <string name="str_Settings_LangUkrainian">UA</string>
+    <string name="str_Settings_LangRussian">RU</string>
+    <string name="str_Settings_LangEnglish">EN</string>
+
+    <string name="tv_Settings_ChooseLanguage">Выберете язык: </string>
+    <string name="tv_Settings_info">О приложении </string>
+</resources>

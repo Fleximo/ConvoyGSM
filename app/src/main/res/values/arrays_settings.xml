@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name = "arr_Settings_Languages">
+        <item>@string/str_Settings_LangUkrainian</item>
+        <item>@string/str_Settings_LangRussian</item>
+        <item>@string/str_Settings_LangEnglish</item>
+    </string-array>
+</resources>

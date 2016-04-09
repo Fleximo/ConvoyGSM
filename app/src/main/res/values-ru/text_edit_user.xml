@@ -1,0 +1,4 @@
+<resources>
+    <string name="btn_EditUser_Save">Сохранить\nпрофиль</string>
+    <string name="btn_EditUser_Delete">Удалить\nпрофиль</string>
+</resources>

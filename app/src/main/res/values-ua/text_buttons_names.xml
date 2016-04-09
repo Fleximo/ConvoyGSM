@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="str_Buttons_Arm">Увімкнути\nохорону</string>
+    <string name="str_Buttons_Disarm">Вимкнути\nохорону</string>
+    <string name="str_Buttons_Alarm">Увімкнути\nтревогу</string>
+    <string name="str_Buttons_USSD">Запит\nбалансу</string>
+    <string name="str_Buttons_Valet">Сервісний\nрежим Valet</string>
+    <string name="str_Buttons_State">Запит\ngстану</string>
+    <string name="str_Buttons_GPS">Запит GPS\nкоординат</string>
+    <string name="str_Buttons_Channel1">Канал №1</string>
+    <string name="str_Buttons_Channel2">Канал №2</string>
+    <string name="str_Buttons_DisableSensors">Відключити\nдатчики</string>
+    <string name="str_Buttons_EnableSensors">Включити\nдатчики</string>
+    <string name="str_Buttons_EnableMonitoring">Включити\nмоніторінг</string>
+    <string name="str_Buttons_DisableMonitoring">Вимкнути\nмоніторінг</string>
+    <string name="str_Buttons_DisableSiren">Вимкнути\nсирену</string>
+    <string name="str_Buttons_EnableSiren">Увімкнути\nсирену</string>
+    <string name="str_Buttons_DisableMicrophone">Вимкнути\nмікрофон</string>
+    <string name="str_Buttons_EnableMicrophone">Увімкнути\nмікрофон</string>
+    <string name="str_Buttons_StartEngine">Запустити\nдвигун</string>
+    <string name="str_Buttons_StopEngine">Зупинити\nдвигун</string>
+    <string name="str_Buttons_StartListen">Прослуховування</string>
+</resources>

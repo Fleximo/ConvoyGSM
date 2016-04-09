@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="str_Login_ErrPassword">Довжина паролю повинна бути від 3 до 5 символів</string>
+    <string name="str_Login_ErrConfirm">Помилка підтвердження</string>
+</resources>
