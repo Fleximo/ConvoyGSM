@@ -1,5 +1,5 @@
 <resources>
-    <string name="tv_Info_Header">Convoy GSM v.1.0.</string>
+    <string name="tv_Info_Header">Convoy GSM v.2.3.</string>
     <string name="tv_Info_Text">This program application is used to control the service
     and security GSM-system Convoy. The GSM-system Convoy can be installed on different objects: cars,
     houses, apartments, garages. The system allows to enable\\disable the security mode, to remote start

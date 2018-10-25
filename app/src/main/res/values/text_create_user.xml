@@ -11,6 +11,6 @@
     <string name="tv_CreateUser_AddUser">Add profile of security object</string>
 
     <string name="str_CreateUser_ErrUserName">Error! Empty user name.</string>
-    <string name="str_CreateUser_ErrSIMNumb">Enter SIM in format +380...</string>
+    <string name="str_CreateUser_ErrSIMNumb">Enter SIM in format +[country code][phone number]</string>
     <string name="str_CreateUser_ErrPIN">Error! Incorrect PIN format!</string>
 </resources>

@@ -540,7 +540,7 @@ public class EditUserActivity extends AppCompatActivity implements View.OnClickL
 
     private boolean isSIMNumberCorrect() {
         String phoneNumber = et_EditUser_SimCardPhone.getText().toString();
-        if( (phoneNumber.length() != 13) || !phoneNumber.substring(0, 4).equals("+380")) {
+        if(!phoneNumber.substring(0, 1).equals("+")) {
             Toast.makeText(this, getResources().getString(R.string.str_CreateUser_ErrSIMNumb), Toast.LENGTH_LONG).show();
             return false;
         }

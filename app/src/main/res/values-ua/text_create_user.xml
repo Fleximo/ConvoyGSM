@@ -11,6 +11,6 @@
     <string name="tv_CreateUser_AddUser">Додати профіль обєка охорони</string>
 
     <string name="str_CreateUser_ErrUserName">Помилка! Введіть ім\'я об\'єкта охорони</string>
-    <string name="str_CreateUser_ErrSIMNumb">Введіть № SIM в форматі +380...</string>
+    <string name="str_CreateUser_ErrSIMNumb">Введіть № SIM в форматі +[код країни][номер телефону].</string>
     <string name="str_CreateUser_ErrPIN">Помилка! Невірний PIN-формат!</string>
 </resources>

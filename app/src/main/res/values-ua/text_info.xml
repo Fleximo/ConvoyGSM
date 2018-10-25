@@ -1,5 +1,5 @@
 <resources>
-    <string name="tv_Info_Header">Convoy GSM v.1.0.</string>
+    <string name="tv_Info_Header">Convoy GSM v.2.3.</string>
     <string name="tv_Info_Text">Дана програма використовується як засіб керування
     охоронною сервісно-информаційною GSM системою типу Convoy. Система може бути встановленою на
     разноманітні об\'єкти охорони - автомобілі, квартири, котеджі, гаражі и т.п. Дана програма дозволяє:
