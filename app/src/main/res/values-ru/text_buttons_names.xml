@@ -5,8 +5,8 @@
     <string name="str_Buttons_Alarm">Включить\nтревогу</string>
     <string name="str_Buttons_USSD">Запрос\nбаланса</string>
     <string name="str_Buttons_Valet">Сервисный\nрежим Valet</string>
-    <string name="str_Buttons_State">Запрос GPS\координат</string>
-    <string name="str_Buttons_GPS">GPS\nкоординаты</string>
+    <string name="str_Buttons_State">Запрос\nсостояния</string>
+    <string name="str_Buttons_GPS">Запрос GPS\nкоординат</string>
     <string name="str_Buttons_Channel1">Канал №1 </string>
     <string name="str_Buttons_Channel2">Канал №2</string>
     <string name="str_Buttons_DisableSensors">Отключить\nдатчики</string>

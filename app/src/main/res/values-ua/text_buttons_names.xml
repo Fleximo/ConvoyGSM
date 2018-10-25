@@ -6,7 +6,7 @@
     <string name="str_Buttons_USSD">Запит\nбалансу</string>
     <string name="str_Buttons_Valet">Сервісний\nрежим Valet</string>
     <string name="str_Buttons_State">Запит\ngстану</string>
-    <string name="str_Buttons_GPS">Запит GPS\nкоординат</string>
+    <string name="str_Buttons_GPS">Запит GPS\nnкоординат</string>
     <string name="str_Buttons_Channel1">Канал №1</string>
     <string name="str_Buttons_Channel2">Канал №2</string>
     <string name="str_Buttons_DisableSensors">Відключити\nдатчики</string>
