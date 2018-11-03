@@ -310,10 +310,10 @@ public class PageFragmentBody extends Fragment {
             text += "SENSOR 1";
         }
         else if(buttonType == ButtonType.BUTTON_TYPE_ENABLE_MONITORING) {
-            text += "MONITOR 0";
+            text += "MONITOR 1";
         }
         else if(buttonType == ButtonType.BUTTON_TYPE_DISABLE_MONITORING) {
-            text += "MONITOR 1";
+            text += "MONITOR 0";
         }
         else if(buttonType == ButtonType.BUTTON_TYPE_DISABLE_SIREN) {
             text += "SIREN 1 0";
@@ -325,7 +325,7 @@ public class PageFragmentBody extends Fragment {
             text += "MIC 0";
         }
         else if(buttonType == ButtonType.BUTTON_TYPE_ENABLE_MICROPHONE) {
-            text += "MIC 1";
+            text += "MIC 5";
         }
         else if(buttonType == ButtonType.BUTTON_TYPE_START_ENGINE) {
             text += "START";
